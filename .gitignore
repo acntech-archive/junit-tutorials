@@ -1,0 +1,17 @@
+# Maven stuff
+target/
+generated/
+
+# Eclipse stuff
+.project
+.classpath
+.settings/
+
+# IntelliJ stuff
+out/
+.idea/
+*.iml
+
+# Mac stuff
+.DS_Store
+
