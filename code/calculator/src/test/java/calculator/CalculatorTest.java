@@ -41,11 +41,10 @@ public class CalculatorTest {
     public void testDividingByZeroIsIllegal() {
         Calculator calculator = new Calculator();
         try {
-            int quotient = calculator.divide(1, 0);
+            calculator.divide(1, 0);
             fail("This line should never be reached!");
         } catch (Exception e) {
             assertThat("Wrong exceptionmessage", e.getMessage(), is("/ by zero"));
         }
-
     }
 }
