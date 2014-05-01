@@ -6,7 +6,7 @@ import junit.framework.TestCase;
  * Test case for the {@link Greeting} class.
  * <p/>
  * <ul>
- * <li>Must extends {@link junit.framework.TestCase}</li>
+ * <li>Must extend {@link junit.framework.TestCase}</li>
  * <li>Should be named the same as the class under test, with "Test" appended at the end</li>
  * <li>Should have the same package name as the class under test</li>
  * </ul>

@@ -1,6 +1,7 @@
 package com.accenture.examples.units;
 
 import com.accenture.examples.domain.Greeting;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,7 +12,7 @@ import static org.junit.Assert.*;
  * Test case for the {@link IntermediateFunctionalUnit} class.
  * <p/>
  * <ul>
- * <li>No longer needs to extends {@link junit.framework.TestCase}</li>
+ * <li>No longer needs to extend {@link junit.framework.TestCase}</li>
  * <li>Should be named the same as the class under test, with "Test" appended at the end</li>
  * <li>Should have the same package name as the class under test</li>
  * </ul>
@@ -25,7 +26,7 @@ public class IntermediateFunctionalUnitTest {
     /**
      * Static test case set-up method.
      * <p/>
-     * This method is invoked once for this test case.
+     * This method is invoked once before any tests are executed in this test case.
      * <p/>
      * <ul>
      * <li>Must be annotated with the {@link org.junit.BeforeClass} annotation</li>
@@ -53,6 +54,21 @@ public class IntermediateFunctionalUnitTest {
     @Before
     public void setUp() {
         ifu = new IntermediateFunctionalUnit();
+    }
+
+    /**
+     * Test case tear-down method.
+     * <p/>
+     * This method is invoked after each of the test methods of this test case.
+     * <p/>
+     * <ul>
+     * <li>Must be annotated with the {@link org.junit.After} annotation</li>
+     * <li>Should remove any persistent scaffolding created for the tests</li>
+     * </ul>
+     */
+    @After
+    public void tearDown() {
+        ifu = null;
     }
 
     /**

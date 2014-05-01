@@ -7,7 +7,7 @@ import junit.framework.TestCase;
  * Test case for the {@link IntermediateFunctionalUnit} class.
  * <p/>
  * <ul>
- * <li>Must extends {@link junit.framework.TestCase}</li>
+ * <li>Must extend {@link junit.framework.TestCase}</li>
  * <li>Should be named the same as the class under test, with "Test" appended at the end</li>
  * <li>Should have the same package name as the class under test</li>
  * </ul>
@@ -31,6 +31,22 @@ public class IntermediateFunctionalUnitTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         ifu = new IntermediateFunctionalUnit();
+    }
+
+    /**
+     * Test case tear-down method.
+     * <p/>
+     * This method is invoked after each of the test methods of this test case.
+     * <p/>
+     * <ul>
+     * <li>Should remove any persistent scaffolding created for the tests</li>
+     * </ul>
+     *
+     * @throws Exception
+     */
+    @Override
+    protected void tearDown() throws Exception {
+        ifu = null;
     }
 
     /**

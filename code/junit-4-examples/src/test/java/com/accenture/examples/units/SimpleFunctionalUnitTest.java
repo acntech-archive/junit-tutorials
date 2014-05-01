@@ -1,5 +1,6 @@
 package com.accenture.examples.units;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -10,7 +11,7 @@ import static org.junit.Assert.*;
  * Test case for the {@link SimpleFunctionalUnit} class.
  * <p/>
  * <ul>
- * <li>No longer needs to extends {@link junit.framework.TestCase}</li>
+ * <li>No longer needs to extend {@link junit.framework.TestCase}</li>
  * <li>Should be named the same as the class under test, with "Test" appended at the end</li>
  * <li>Should have the same package name as the class under test</li>
  * </ul>
@@ -19,12 +20,12 @@ public class SimpleFunctionalUnitTest {
 
     private static String FOO_NAME;
 
-    private SimpleFunctionalUnit sft;
+    private SimpleFunctionalUnit sfu;
 
     /**
      * Static test case set-up method.
      * <p/>
-     * This method is invoked once for this test case.
+     * This method is invoked once before any tests are executed in this test case.
      * <p/>
      * <ul>
      * <li>Must be annotated with the {@link org.junit.BeforeClass} annotation</li>
@@ -51,7 +52,22 @@ public class SimpleFunctionalUnitTest {
      */
     @Before
     public void setUp() {
-        sft = new SimpleFunctionalUnit();
+        sfu = new SimpleFunctionalUnit();
+    }
+
+    /**
+     * Test case tear-down method.
+     * <p/>
+     * This method is invoked after each of the test methods of this test case.
+     * <p/>
+     * <ul>
+     * <li>Must be annotated with the {@link org.junit.After} annotation</li>
+     * <li>Should remove any persistent scaffolding created for the tests</li>
+     * </ul>
+     */
+    @After
+    public void tearDown() {
+        sfu = null;
     }
 
     /**
@@ -68,27 +84,27 @@ public class SimpleFunctionalUnitTest {
      */
     @Test
     public void nameIsNull() {
-        assertNull("Greeting should be null", sft.getGreeting(null));
+        assertNull("Greeting should be null", sfu.getGreeting(null));
     }
 
     @Test
     public void SHOWING_THAT_TEST_METHOD_NAMES_CAN_BE_ANYTHING() {
-        assertNull("Greeting should be null", sft.getGreeting(null));
+        assertNull("Greeting should be null", sfu.getGreeting(null));
     }
 
     @Test
     public void nameIsEmptyString() {
-        assertNull("Greeting should be null", sft.getGreeting(""));
+        assertNull("Greeting should be null", sfu.getGreeting(""));
     }
 
     @Test
     public void nameIsWhitespaceString() {
-        assertNull("Greeting should be null", sft.getGreeting("   "));
+        assertNull("Greeting should be null", sfu.getGreeting("   "));
     }
 
     @Test
     public void nameIsSet() {
-        String greeting = sft.getGreeting(FOO_NAME);
+        String greeting = sfu.getGreeting(FOO_NAME);
 
         assertNotNull("Greeting should not be null", greeting);
         assertEquals("Greeting should be equal", "Hello Foo!", greeting);

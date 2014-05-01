@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
  * Test case for the {@link InternationalGreeting} class.
  * <p/>
  * <ul>
- * <li>No longer needs to extends {@link junit.framework.TestCase}</li>
+ * <li>No longer needs to extend {@link junit.framework.TestCase}</li>
  * <li>Should be named the same as the class under test, with "Test" appended at the end</li>
  * <li>Should have the same package name as the class under test</li>
  * </ul>
